@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sharon Mumbe | Portfolio</title>
+    <meta name="description" content="Professional portfolio of Sharon Mumbe, a skilled Web Developer specializing in creating modern and interactive web experiences.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <header>
+        <nav>
+            <div class="logo">SM<span>.</span></div>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <div class="badge"></div>
+                <h1>Hi, I'm <span class="gradient-text">Sharon Mumbe</span></h1>
+                <p class="about-text">I'm a passionate Web Developer dedicated to building beautiful, functional, and user-centric digital experiences. With a keen eye for design and a love for clean code, I turn ideas into reality.</p>
+                
+                <div class="contact-brief">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>sharon.mumbe@example.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+254 700 000 000</span>
+                    </div>
+                </div>
+
+                <div class="hero-btns">
+                    <a href="#contact" class="btn primary-btn">Get In Touch</a>
+                    <a href="#services" class="btn secondary-btn">View Services</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-wrapper">
+                    <img src="profile_placeholder.png" alt="Sharon Mumbe">
+                    <div class="image-bg"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="services">
+            <div class="section-header">
+                <h2 class="section-title">Services I Offer</h2>
+                <p class="section-subtitle">Delivering high-quality solutions tailored to your needs.</p>
+            </div>
+            <div class="services-list">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-code"></i></div>
+                    <h3>Web Development</h3>
+                    <p>Creating responsive, high-performance websites using the latest technologies and best practices.</p>
+                    <ul class="feature-list">
+                        <li>Frontend Development (HTML/CSS/JS)</li>
+                        <li>Single Page Applications</li>
+                        <li>Performance Optimization</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
+                    <h3>UI/UX Design</h3>
+                    <p>Designing intuitive and aesthetically pleasing interfaces that provide exceptional user experiences.</p>
+                    <ul class="feature-list">
+                        <li>User Interface Design</li>
+                        <li>Wireframing & Prototyping</li>
+                        <li>Responsive Web Design</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h3>Mobile Integration</h3>
+                    <p>Ensuring your web presence is perfectly optimized for all mobile platforms and devices.</p>
+                    <ul class="feature-list">
+                        <li>Mobile-First Design</li>
+                        <li>Cross-Browser Compatibility</li>
+                        <li>Touch-Friendly Interfaces</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h2 class="section-title">Let's Work Together</h2>
+                        <p>Have a project in mind or just want to say hi? Fill out the form and I'll get back to you as soon as possible.</p>
+                        
+                        <div class="info-items">
+                            <div class="info-item">
+                                <div class="icon-box"><i class="fas fa-envelope"></i></div>
+                                <div>
+                                    <h4>Email</h4>
+                                    <p>sharon.mumbe@example.com</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="icon-box"><i class="fas fa-phone"></i></div>
+                                <div>
+                                    <h4>Phone</h4>
+                                    <p>+254 700 000 000</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="icon-box"><i class="fas fa-location-dot"></i></div>
+                                <div>
+                                    <h4>Location</h4>
+                                    <p>Nairobi, Kenya</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form-container">
+                        <form id="contact-form" class="contact-form">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" placeholder="Your Full Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" placeholder="Your Email Address" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" placeholder="Your Phone Number">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn primary-btn submit-btn">
+                                <span>Send Message</span>
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">SM<span>.</span></div>
+            <p>&copy; 2026 Sharon Mumbe. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
