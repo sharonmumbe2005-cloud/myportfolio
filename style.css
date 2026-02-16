@@ -142,7 +142,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 10%;
+    padding: 0 5%;
     padding-top: var(--nav-height);
     gap: 4rem;
 }
@@ -168,6 +168,7 @@ nav {
 .gradient-text {
     background: var(--gradient);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -273,7 +274,7 @@ nav {
 
 /* Services Section */
 .services {
-    padding: 100px 10%;
+    padding: 100px 5%;
     background: var(--surface-color);
 }
 
@@ -365,7 +366,7 @@ nav {
 
 /* Contact Section */
 .contact {
-    padding: 100px 10%;
+    padding: 100px 5%;
 }
 
 .contact-grid {
@@ -507,12 +508,45 @@ footer {
     transform: translateY(-3px);
 }
 
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: var(--text-primary);
+    transition: 0.3s;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
 /* Responsive */
 @media (max-width: 1024px) {
     .hero {
         flex-direction: column;
         text-align: center;
-        padding-top: 120px;
+        padding-top: 140px;
+        gap: 3rem;
+    }
+
+    .hero-content h1 {
+        font-size: 3.2rem;
     }
 
     .about-text {
@@ -523,6 +557,7 @@ footer {
     .hero-btns,
     .contact-brief {
         justify-content: center;
+        flex-wrap: wrap;
     }
 
     .contact-grid {
@@ -532,16 +567,69 @@ footer {
 
 @media (max-width: 768px) {
     .nav-links {
-        display: none;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background: var(--bg-color);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: 0.4s;
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+        gap: 2rem;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links a {
+        font-size: 1.5rem;
     }
 
     .hero-content h1 {
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
 
     .image-wrapper {
-        width: 300px;
-        height: 300px;
+        width: 280px;
+        height: 280px;
+    }
+
+    .contact-form-container {
+        padding: 2rem 1.5rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-btns {
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+    }
+
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .contact-item {
+        font-size: 0.9rem;
+    }
+
+    .contact-brief {
+        gap: 0.5rem;
     }
 }
 
