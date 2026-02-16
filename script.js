@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('mousemove', (e) => {
         cursor.style.left = e.clientX + 'px';
         cursor.style.top = e.clientY + 'px';
-        
+
         setTimeout(() => {
             follower.style.left = e.clientX - 16 + 'px';
             follower.style.top = e.clientY - 16 + 'px';
@@ -74,25 +74,34 @@ document.addEventListener('DOMContentLoaded', () => {
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            
+
+            const formData = new FormData(contactForm);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const phone = formData.get('phone');
+            const message = formData.get('message');
+
+            const waNumber = "254719423815";
+            const waMessage = `Hello Sharon, I'm ${name}.\n\nEmail: ${email}\nPhone: ${phone}\n\nMessage: ${message}`;
+            const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(waMessage)}`;
+
             const submitBtn = contactForm.querySelector('.submit-btn');
             const originalContent = submitBtn.innerHTML;
-            
-            // Simulation of form submission
-            submitBtn.innerHTML = '<span>Sending...</span> <i class="fas fa-spinner fa-spin"></i>';
+
+            // Visual feedback before redirecting
+            submitBtn.innerHTML = '<span>Opening WhatsApp...</span> <i class="fab fa-whatsapp"></i>';
             submitBtn.disabled = true;
 
             setTimeout(() => {
-                submitBtn.innerHTML = '<span>Message Sent!</span> <i class="fas fa-check"></i>';
-                submitBtn.style.background = '#10b981';
-                contactForm.reset();
+                window.open(waUrl, '_blank');
 
+                // Reset button state
                 setTimeout(() => {
                     submitBtn.innerHTML = originalContent;
-                    submitBtn.style.background = '';
                     submitBtn.disabled = false;
-                }, 3000);
-            }, 2000);
+                    contactForm.reset();
+                }, 1000);
+            }, 800);
         });
     }
 
